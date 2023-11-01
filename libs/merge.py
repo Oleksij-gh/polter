@@ -9,7 +9,8 @@ def merge(coords_name, proba_name):
     
     with open('output.txt', 'w') as output:
         for i in range(len(coords)):
-            output.writelines(f'{coords[i][:-2]}: {float(proba[i])}\n' )
-            out[coords[i][:-2]] = float(proba[i])
+            if float(proba[i]) != 0:
+                output.writelines(f'{coords[i][:-2]}: {float(proba[i])}\n' )
+                out[coords[i][:-2]] = float(proba[i])
 
     return out

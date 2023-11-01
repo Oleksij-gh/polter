@@ -1,7 +1,9 @@
 import sys
 import argparse
 import os
-from libs.input_builder import create_input
+import time
+from libs.coord_builder import create_coords
+from libs.merge import merge
 
 
 if __name__ == "__main__":
@@ -18,9 +20,12 @@ if __name__ == "__main__":
     except:
         print('Введите числовые значения аргументов')
 
-    create_input(width, height, step)
+    create_coords(width, height, step)
     os.system('"C://Study//polter//plst_1.exe"')
-
+    output = merge('input.txt', 'plst_dstr.txt')
+    print(output)
+    input()
+    
 
 
     
